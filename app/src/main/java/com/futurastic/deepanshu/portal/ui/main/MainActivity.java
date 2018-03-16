@@ -1,4 +1,4 @@
-package com.futurastic.deepanshu.portal;
+package com.futurastic.deepanshu.portal.ui.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
