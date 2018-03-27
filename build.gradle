@@ -5,10 +5,12 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,4 +26,33 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 17
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.1'
+
+    // App dependencies
+    supportLibraryVersion = '27.1.0'
+    gsonVersion = '2.8.2'
+    calligraphyVersion = '2.3.0'
+    frescoVersion = '1.8.1'
+
+    rx2FastAndroidNetworking = '1.0.1'
+
+    dagger2Version = '2.11'
+    rxjava2Version = '2.1.9'
+    rxandroidVersion = '2.0.2'
+    butterKnifeVersion = '8.8.1'
+    greenDaoVersion = '3.2.2'
+    debugDBVersion = '1.0.3'
+    timberVersion = '4.6.1'
+
+    //Test dependencies
+    junitVersion = '4.12'
+    espressoVersion = '3.0.1'
+    mockitoVersion = '2.7.1'
 }
