@@ -9,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -47,7 +46,7 @@ ext {
     rxjava2Version = '2.1.9'
     rxandroidVersion = '2.0.2'
     butterKnifeVersion = '8.8.1'
-    greenDaoVersion = '3.2.2'
+    roomVersion = '1.0.0-alpha4'
     debugDBVersion = '1.0.3'
     timberVersion = '4.6.1'
 
