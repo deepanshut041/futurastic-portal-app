@@ -1,4 +1,4 @@
-package com.futurastic.deepanshu.portal.ui.main;
+package com.futurastic.deepanshu.portal.ui.login;
 
 import com.futurastic.deepanshu.portal.data.DataManager;
 import com.futurastic.deepanshu.portal.ui.base.MvpPresenterImpl;
@@ -9,11 +9,10 @@ import javax.inject.Inject;
  * Created by deepanshu on 16/3/18.
  */
 
-public class MainMvpPresenterImpl<V extends MainMvpView> extends MvpPresenterImpl<V>
-        implements MainMvpPresenter<V> {
+public class LoginPresenterImpl<V extends LoginMvpView> extends MvpPresenterImpl<V> implements LoginPresenter<V> {
 
     @Inject
-    public MainMvpPresenterImpl(DataManager dataManager) {
+    public LoginPresenterImpl(DataManager dataManager) {
         super(dataManager);
     }
 
@@ -21,6 +20,5 @@ public class MainMvpPresenterImpl<V extends MainMvpView> extends MvpPresenterImp
     public void onAttach(V mvpView) {
         super.onAttach(mvpView);
     }
-
 
 }

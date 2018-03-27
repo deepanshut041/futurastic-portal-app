@@ -6,6 +6,7 @@ import android.content.Context;
 import com.futurastic.deepanshu.portal.PortalApp;
 import com.futurastic.deepanshu.portal.data.DataManager;
 import com.futurastic.deepanshu.portal.di.ApplicationContext;
+import com.futurastic.deepanshu.portal.di.module.ApplicationModule;
 
 import javax.inject.Singleton;
 
@@ -16,7 +17,7 @@ import dagger.Component;
  */
 
 @Singleton
-@Component
+@Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
     void inject(PortalApp app);

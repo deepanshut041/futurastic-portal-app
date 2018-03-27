@@ -9,4 +9,10 @@ import com.futurastic.deepanshu.portal.ui.base.MvpPresenter;
 
 @PerActivity
 public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V> {
+
+    void onDrawerOptionSettingsClick();
+
+    void onDrawerOptionLogoutClick();
+
+    String getUser();
 }

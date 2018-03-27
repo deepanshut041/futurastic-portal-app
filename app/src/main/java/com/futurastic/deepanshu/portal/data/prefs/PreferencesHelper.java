@@ -5,4 +5,8 @@ package com.futurastic.deepanshu.portal.data.prefs;
  */
 
 public interface PreferencesHelper {
+
+    String getAccessToken();
+
+    void setAccessToken(String accessToken);
 }

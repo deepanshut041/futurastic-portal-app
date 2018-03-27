@@ -4,14 +4,17 @@ import android.app.Application;
 import android.content.Context;
 
 import com.futurastic.deepanshu.portal.data.DataManager;
-import com.futurastic.deepanshu.portal.data.DataManagerImpl;
+import com.futurastic.deepanshu.portal.data.AppDataManager;
 import com.futurastic.deepanshu.portal.data.db.DbHelper;
-import com.futurastic.deepanshu.portal.data.db.DbHelperImpl;
+import com.futurastic.deepanshu.portal.data.db.AppDbHelper;
+import com.futurastic.deepanshu.portal.data.network.ApiHeader;
 import com.futurastic.deepanshu.portal.data.network.ApiHelper;
-import com.futurastic.deepanshu.portal.data.network.ApiHelperImpl;
+import com.futurastic.deepanshu.portal.data.network.AppApiHelper;
 import com.futurastic.deepanshu.portal.data.prefs.PreferencesHelper;
-import com.futurastic.deepanshu.portal.data.prefs.PreferencesHelperImpl;
+import com.futurastic.deepanshu.portal.data.prefs.AppPreferencesHelper;
 import com.futurastic.deepanshu.portal.di.ApplicationContext;
+import com.futurastic.deepanshu.portal.di.PreferenceInfo;
+import com.futurastic.deepanshu.portal.utils.AppConstants;
 
 import javax.inject.Singleton;
 
@@ -43,25 +46,39 @@ public class ApplicationModule {
     }
 
     @Singleton
-    DataManager provideDataManager(DataManagerImpl appDataManager) {
+    DataManager provideDataManager(AppDataManager appDataManager) {
         return appDataManager;
     }
 
     @Provides
     @Singleton
-    DbHelper provideDbHelper(DbHelperImpl appDbHelper) {
+    DbHelper provideDbHelper(AppDbHelper appDbHelper) {
         return appDbHelper;
     }
 
     @Provides
+    @PreferenceInfo
+    String providePreferenceName() {
+        return AppConstants.PREF_NAME;
+    }
+
+    @Provides
     @Singleton
-    PreferencesHelper providePreferencesHelper(PreferencesHelperImpl appPreferencesHelper) {
+    PreferencesHelper providePreferencesHelper(AppPreferencesHelper appPreferencesHelper) {
         return appPreferencesHelper;
     }
 
     @Provides
     @Singleton
-    ApiHelper provideApiHelper(ApiHelperImpl appApiHelper) {
+    ApiHelper provideApiHelper(AppApiHelper appApiHelper) {
         return appApiHelper;
     }
+
+    @Provides
+    @Singleton
+    ApiHeader provideApiHeader(PreferencesHelper preferencesHelper) {
+        return new ApiHeader(preferencesHelper.getAccessToken(), preferencesHelper);
+    }
+
+
 }

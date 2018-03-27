@@ -5,4 +5,5 @@ package com.futurastic.deepanshu.portal.utils;
  */
 
 public final class AppConstants {
+    public static final String PREF_NAME = "portal";
 }
