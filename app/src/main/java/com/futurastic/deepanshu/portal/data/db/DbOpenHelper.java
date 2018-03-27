@@ -10,6 +10,6 @@ import com.futurastic.deepanshu.portal.data.db.models.AttendanceModel;
  */
 
 public class DbOpenHelper {
-    
+
 
 }
